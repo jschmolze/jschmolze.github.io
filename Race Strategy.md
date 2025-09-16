@@ -38,7 +38,7 @@ As mentioned above, our simulation involves a model of the solar car. But that's
 - Interaction among different components of the car subsystem (motor, battery, solar array, etc.) that model their physics and behavior
 - The car's response to external factors like weather, terrain, and race conditions affect the car's performance
 
-![Screenshot](output.png)
+![Screenshot](Output.png)
 *Result of Running our Simulation directly from Python*
 
 3. **The Optimizer System**: Our ultimate goal is to have the confidence to tell the driver to drive at a certain speed at a certain location, so that we keep a good balance between battery consumption and distance coverage, while considering physical constraints and weather prediction for the next several hours:
@@ -53,3 +53,4 @@ As mentioned above, our simulation involves a model of the solar car. But that's
 
 
 4. **Validation & Fine-Tuning**: We still need to match the simulated car to the actual car. This means that we need to analyze data from future test drives and retrieve parameters for our model. Since we are building a new car simultaneously, this would not be our main focus this semester. However, it would still be helpful to work with Mechanical to come up with a better methodology for test-drive data analysis.
+
