@@ -1,0 +1,54 @@
+<h1 id="sample-markdown">Sample Markdown</h1>
+<p>This is some basic, sampl# Race Strategy
+Welcome to the GitHub Repository for the Race Strategy Team at Badger Solar Racing! Below you will find an overview of our system.</p>
+<h2 id="the-goal-of-race-strategy">The Goal of Race Strategy</h2>
+<p>We are building a solar race car, and we want to drive wisely. Thus came the ultimate mission of the race strategy team: to unlock the car’s full potential by determining the <strong>optimal driving strategy</strong>. We aim to balance speed, battery efficiency, and distance coverage while adapting to real-time conditions like weather and terrain. By combining advanced simulations, data analysis, and physical insights, we empower our driver with precise, actionable guidance to maximize performance and win the race.</p>
+<h2 id="tools-for-race-strategy">Tools for Race Strategy</h2>
+<h3 id="matlab-simulink-python-and-physical-intuitions">Matlab, Simulink, Python, and Physical Intuitions</h3>
+<p>In the quest to study the dynamics and behavior of the car, we are building a simulated model of our solar car using Simulink on Matlab.
+Personally, Simulink is fairly easy to get started (it&#39;s kinda like Scratch). Matlab on the other hand is both interesting and frustrating, so one would need a fair fluency in the language, as well as a good temper.
+The model of the car is built on models of each small section, and their interaction. We mainly follow the physics of each piece in building the model, and a trustworthy physical intuition.</p>
+<p>Python serves as the backbone of our data pipeline system, functioning as the bridge between our MATLAB simulation and real-world telemetry data. We leverage Python&#39;s extensive libraries for:</p>
+<ul>
+<li>Data collection from onboard sensors (stored in Redis Database)</li>
+<li>Real-time processing and cleaning of telemetry data</li>
+<li>Integration with weather APIs and route data</li>
+<li>Custom interfaces that allow our Simulink simulations to be called from Python</li>
+</ul>
+<h2 id="the-dichotomy-of-race-strategy-system">The Dichotomy of Race Strategy System</h2>
+<h3 id="the-simulation">The Simulation</h3>
+<p>As mentioned above, our simulation involves a model of the solar car. But that&#39;s not all to it. To study the car&#39;s behavior in different environments and weather, we have to also consider external conditions and their impact on the car. The overall simulation can be broken down into two big parts:</p>
+<ol>
+<li>Interaction among different components of the car</li>
+<li>The Car&#39;s response to external conditions</li>
+</ol>
+<h3 id="high-level-overview-of-race-strategy-systems">High Level Overview of Race Strategy Systems</h3>
+<ol>
+<li><strong>Data Pipeline System</strong>: This system bridges the gap between our simulation and reality by:</li>
+<li>Collecting telemetry data from the actual car during testing/racing</li>
+<li>Processing this data to feed into our simulation model</li>
+<li>Enabling real-time updates to our strategy based on current conditions</li>
+<li><p>Creating a closed-loop feedback system where actual performance informs simulation refinements</p>
+</li>
+<li><p><strong>The Simulation System</strong>: The simulation is the foundation of race strategy, built on MATLAB/Simulink. It consists of two main components:</p>
+</li>
+<li>Interaction among different components of the car subsystem (motor, battery, solar array, etc.) that model their physics and behavior</li>
+<li>The car&#39;s response to external factors like weather, terrain, and race conditions affect the car&#39;s performance</li>
+</ol>
+<p><img src="Output.png" alt="Screenshot">
+<em>Result of Running our Simulation directly from Python</em></p>
+<ol>
+<li><strong>The Optimizer System</strong>: Our ultimate goal is to have the confidence to tell the driver to drive at a certain speed at a certain location, so that we keep a good balance between battery consumption and distance coverage, while considering physical constraints and weather prediction for the next several hours:</li>
+<li><strong>Uses mathematical optimization</strong> (specifically <code>fmincon</code> constrained optimization) to find optimal power settings</li>
+<li><strong>Maximize distance traveled</strong> by systematically evaluating different power configurations </li>
+<li><strong>Set constraints</strong> on power usage (e.g., between 100-1000 kW) to maintain feasibility</li>
+<li><strong>Balance computational efficiency</strong> with solution quality through limited iterations and function evaluations</li>
+<li><strong>Validate results</strong> by simulating the optimized parameters to verify performance</li>
+<li><strong>Generate specific target power values</strong> that can be translated into driver instructions</li>
+<li><strong>Provide quantitative performance predictions</strong> (e.g., maximum distance traveled) for the optimized strategy</li>
+<li><strong>Interface directly with the simulation model</strong></li>
+</ol>
+<ol>
+<li><strong>Validation &amp; Fine-Tuning</strong>: We still need to match the simulated car to the actual car. This means that we need to analyze data from future test drives and retrieve parameters for our model. Since we are building a new car simultaneously, this would not be our main focus this semester. However, it would still be helpful to work with Mechanical to come up with a better methodology for test-drive data analysis.
+e markdown.</li>
+</ol>
