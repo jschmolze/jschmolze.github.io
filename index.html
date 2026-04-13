@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jesse Schmolze — Portfolio</title>
-  <meta name="description" content="Portfolio and career overview for Jesse Schmolze: projects, coursework, research, clubs, and contact." />
-  <meta property="og:title" content="Jesse Schmolze — Portfolio" />
-  <meta property="og:description" content="Everything recruiters need: projects, coursework, experience, and contact." />
+  <title>Jesse Schmolze</title>
+  <meta name="description" content="Research portfolio for Jesse Schmolze — quantitative finance, machine learning, and economics." />
+  <meta property="og:title" content="Jesse Schmolze" />
+  <meta property="og:description" content="Research in quantitative finance, machine learning, and economics." />
   <meta property="og:type" content="website" />
   <meta name="theme-color" content="#0f172a" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root{
+    :root {
       --bg: #0b0f1a;
       --bg2: #0f172a;
       --card: #0b1220;
@@ -22,9 +22,10 @@
       --accent: #60a5fa;
       --chip: #1f2a44;
       --ring: 0 0 0 2px rgba(96,165,250,.35);
+      --border: color-mix(in oklab, var(--text) 12%, transparent);
     }
-    @media (prefers-color-scheme: light){
-      :root{
+    @media (prefers-color-scheme: light) {
+      :root {
         --bg: #f8fafc;
         --bg2: #ffffff;
         --card: #f1f5f9;
@@ -36,297 +37,248 @@
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body{
-      margin:0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color: var(--text); background: radial-gradient(1200px 800px at 10% -10%, rgba(96,165,250,.12), transparent), var(--bg);
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background: radial-gradient(1200px 800px at 10% -10%, rgba(96,165,250,.12), transparent), var(--bg);
       line-height: 1.6;
     }
-    header{
-      position: sticky; top: 0; backdrop-filter: saturate(180%) blur(8px);
+ 
+    /* NAV */
+    header {
+      position: sticky; top: 0;
+      backdrop-filter: saturate(180%) blur(8px);
       background: color-mix(in oklab, var(--bg2) 80%, transparent);
-      border-bottom: 1px solid color-mix(in oklab, var(--text) 15%, transparent);
+      border-bottom: 1px solid var(--border);
       z-index: 10;
     }
-    .container{ max-width: 1100px; margin: 0 auto; padding: 1rem 1.25rem; }
-    nav{ display:flex; gap:1rem; align-items:center; justify-content: space-between; }
-    nav .links a{ text-decoration:none; color:var(--muted); font-weight:600; padding:.5rem .75rem; border-radius: .75rem; }
-    nav .links a:hover{ color: var(--text); background: color-mix(in oklab, var(--text) 8%, transparent); }
-    .btn{
-      display:inline-flex; align-items:center; gap:.5rem; padding:.6rem .9rem; border-radius:.9rem; text-decoration:none; font-weight:600;
-      background: var(--accent); color:white; box-shadow: 0 8px 24px rgba(37,99,235,.25);
+    .container { max-width: 860px; margin: 0 auto; padding: 1rem 1.25rem; }
+    nav { display: flex; gap: 1rem; align-items: center; justify-content: space-between; }
+    nav .links a {
+      text-decoration: none; color: var(--muted); font-weight: 600;
+      padding: .5rem .75rem; border-radius: .75rem;
     }
-    .btn.secondary{ background: transparent; color: var(--text); border:1px solid color-mix(in oklab, var(--text) 18%, transparent); box-shadow:none; }
-
-    .hero{ padding: 3.5rem 1.25rem 2rem; }
-    .hero-grid{ display:grid; grid-template-columns: 1.2fr 1fr; gap:2rem; align-items:center; }
-    @media (max-width: 880px){ .hero-grid{ grid-template-columns: 1fr; } }
-    .card{
-      background: linear-gradient(180deg, color-mix(in oklab, var(--card) 92%, transparent), color-mix(in oklab, var(--bg2) 90%, transparent));
-      border:1px solid color-mix(in oklab, var(--text) 12%, transparent);
-      border-radius: 1.25rem; padding: 1.25rem; box-shadow: 0 10px 30px rgba(2,6,23,.35);
+    nav .links a:hover { color: var(--text); background: color-mix(in oklab, var(--text) 8%, transparent); }
+ 
+    /* BUTTONS */
+    .btn {
+      display: inline-flex; align-items: center; gap: .5rem;
+      padding: .55rem .85rem; border-radius: .9rem; text-decoration: none;
+      font-weight: 600; font-size: .9rem;
+      background: var(--accent); color: white;
+      box-shadow: 0 6px 20px rgba(37,99,235,.22);
+      transition: opacity .15s;
     }
-    h1{ font-size: clamp(2rem, 3.6vw, 3rem); line-height:1.2; margin:.25rem 0 1rem; }
-    h2{ font-size: clamp(1.4rem, 2.2vw, 1.8rem); margin: 1.5rem 0 .75rem; }
-    p.lead{ font-size: 1.05rem; color: var(--muted); margin-top:-.5rem; }
-
-    .badges{ display:flex; flex-wrap:wrap; gap:.5rem; margin-top: .75rem; }
-    .badge{ font-size:.8rem; padding:.35rem .6rem; border-radius: 999px; background: var(--chip); border:1px solid color-mix(in oklab, var(--text) 12%, transparent); }
-
-    .grid{ display:grid; gap:1rem; grid-template-columns: repeat(12, 1fr); }
-    .col-6{ grid-column: span 6; }
-    .col-5{ grid-column: span 5; }
-    .col-7{ grid-column: span 7; }
-    .col-12{ grid-column: span 12; }
-    @media (max-width: 880px){ .col-6, .col-5, .col-7{ grid-column: span 12; } }
-
-    .list{ display:grid; gap: .75rem; }
-    .item{ padding: .95rem; border-radius: .9rem; background: var(--card); border:1px solid color-mix(in oklab, var(--text) 10%, transparent); }
-    .item h3{ margin:.1rem 0 .35rem; font-size:1.05rem }
-    .meta{ color: var(--muted); font-size: .9rem; }
-
-    .footer{ color: var(--muted); border-top: 1px solid color-mix(in oklab, var(--text) 12%, transparent); padding: 2rem 0; margin-top: 2rem; }
-
-    .row{ display:flex; gap:.75rem; flex-wrap: wrap; }
-    .icons a{ display:inline-flex; align-items:center; gap:.5rem; color: var(--text); text-decoration:none; padding:.5rem .75rem; border-radius:.75rem; border:1px solid color-mix(in oklab, var(--text) 12%, transparent); background: var(--card); }
-    .icons a:hover{ outline: var(--ring); }
-    svg{ width: 18px; height: 18px; }
-
-    .section-title{ display:flex; align-items:center; justify-content:space-between; gap:1rem; }
-    .chips{ display:flex; gap:.5rem; flex-wrap:wrap; }
-    .chip{ border-radius:999px; padding:.4rem .65rem; background: var(--chip); font-size:.85rem; border:1px solid color-mix(in oklab, var(--text) 12%, transparent); }
-
-    .resume{ display:flex; gap:.75rem; flex-wrap:wrap; }
+    .btn:hover { opacity: .88; }
+    .btn.secondary {
+      background: transparent; color: var(--text);
+      border: 1px solid var(--border); box-shadow: none;
+    }
+ 
+    /* HERO */
+    .hero { padding: 3.5rem 1.25rem 2rem; }
+    .hero-card {
+      background: linear-gradient(180deg,
+        color-mix(in oklab, var(--card) 92%, transparent),
+        color-mix(in oklab, var(--bg2) 90%, transparent));
+      border: 1px solid var(--border);
+      border-radius: 1.25rem; padding: 1.75rem 2rem;
+      box-shadow: 0 10px 30px rgba(2,6,23,.35);
+      max-width: 680px;
+    }
+    h1 { font-size: clamp(2rem, 3.6vw, 2.8rem); line-height: 1.2; margin: .25rem 0 .75rem; }
+    p.lead { font-size: 1.05rem; color: var(--muted); margin: 0 0 1.25rem; }
+    .row { display: flex; gap: .75rem; flex-wrap: wrap; }
+    .icons { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: .85rem; }
+    .icons a {
+      display: inline-flex; align-items: center; gap: .5rem;
+      color: var(--text); text-decoration: none;
+      padding: .45rem .7rem; border-radius: .75rem;
+      border: 1px solid var(--border); background: var(--card);
+      font-size: .9rem; font-weight: 500;
+    }
+    .icons a:hover { outline: var(--ring); }
+    svg { width: 17px; height: 17px; flex-shrink: 0; }
+ 
+    /* SECTIONS */
+    section { margin-bottom: 1.5rem; }
+    .card {
+      background: linear-gradient(180deg,
+        color-mix(in oklab, var(--card) 92%, transparent),
+        color-mix(in oklab, var(--bg2) 90%, transparent));
+      border: 1px solid var(--border);
+      border-radius: 1.25rem; padding: 1.75rem 2rem;
+      box-shadow: 0 10px 30px rgba(2,6,23,.35);
+    }
+    h2 { font-size: clamp(1.3rem, 2vw, 1.65rem); margin: 0 0 1.25rem; }
+ 
+    /* RESEARCH ITEMS */
+    .research-list { display: grid; gap: 1.25rem; }
+    .research-item {
+      padding: 1.25rem 1.4rem;
+      border-radius: 1rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+    }
+    .research-item h3 { margin: 0 0 .25rem; font-size: 1.05rem; }
+    .research-meta {
+      color: var(--accent); font-size: .82rem; font-weight: 600;
+      letter-spacing: .3px; margin-bottom: .6rem; text-transform: uppercase;
+    }
+    .research-item p { color: var(--muted); font-size: .95rem; margin: 0 0 1rem; line-height: 1.65; }
+    .research-links { display: flex; gap: .6rem; flex-wrap: wrap; }
+ 
+    /* STATUS BADGE */
+    .status {
+      display: inline-block; font-size: .75rem; font-weight: 600;
+      padding: .25rem .6rem; border-radius: 999px;
+      background: color-mix(in oklab, var(--accent) 15%, transparent);
+      color: var(--accent); border: 1px solid color-mix(in oklab, var(--accent) 30%, transparent);
+      margin-bottom: .75rem;
+    }
+ 
+    /* FOOTER */
+    .footer {
+      color: var(--muted); border-top: 1px solid var(--border);
+      padding: 2rem 0; margin-top: 2rem; font-size: .9rem;
+    }
   </style>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Jesse Schmolze",
-    "url": "https://jschmolze.github.io/",
-    "sameAs": [
-      "https://github.com/jschmolze",
-      "https://www.linkedin.com/in/jesse-schmolze"
-    ],
-    "alumniOf": "University of Wisconsin–Madison",
-    "jobTitle": "Undergraduate — Economics, Mathematics & Physics",
-    "knowsAbout": ["quantitative finance", "machine learning", "solar racing", "combinatorics", "econometrics", "quantum mechanics"]
-  }
-  </script>
 </head>
 <body>
+ 
   <header>
     <div class="container">
       <nav>
         <div style="font-weight:800; letter-spacing:.3px">JS</div>
         <div class="links">
-          <a href="#projects">Projects</a>
-          <a href="#coursework">Coursework</a>
-          <a href="#experience">Experience</a>
-          <a href="#clubs">Clubs</a>
+          <a href="#research">Research</a>
           <a href="#contact">Contact</a>
         </div>
       </nav>
     </div>
   </header>
-
+ 
   <main class="container">
+ 
+    <!-- HERO -->
     <section class="hero">
-      <div class="hero-grid">
-        <div class="card">
-          <h1>Jesse Schmolze</h1>
-          <p class="lead">Economics, Mathematics and Physics @ UW–Madison. Exploring statistical finance, machine learning, stochastic mathematical methods and economic research.</p>
-          <div class="row" style="margin-top:1rem">
-            <a class="btn" href="#projects">View Projects</a>
-            <a class="btn secondary" href="#contact">Get in Touch</a>
-          </div>
-          <div class="icons" style="margin-top:1rem">
-            <a href="https://github.com/jschmolze" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58l-.02-2.27c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.35-1.77-1.35-1.77-1.1-.76.08-.75.08-.75 1.22.09 1.86 1.25 1.86 1.25 1.08 1.85 2.84 1.32 3.53 1 .11-.79.42-1.32.77-1.62-2.67-.3-5.47-1.34-5.47-5.95 0-1.31.47-2.38 1.25-3.22-.13-.3-.54-1.51.12-3.15 0 0 1.01-.32 3.3 1.23a11.47 11.47 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.64.25 2.85.12 3.15.78.84 1.25 1.91 1.25 3.22 0 4.62-2.8 5.65-5.47 5.95.43.37.81 1.1.81 2.22l-.01 3.29c0 .32.21.7.82.58A12 12 0 0 0 12 .5Z"/></svg>
-              GitHub
-            </a>
-            <a href="https://www.linkedin.com/in/Jesse-schmolze" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 0 0 5.001 2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-.9 1.7-1.9 3.6-1.9 3.8 0 4.5 2.5 4.5 5.8V21h-4v-5.1c0-1.2 0-2.8-1.7-2.8-1.7 0-2 1.3-2 2.7V21H9z"/></svg>
-              LinkedIn
-            </a>
-            <a href="mailto:jcschmolze@gmail.com">
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"/></svg>
-              Email
-            </a>
-          </div>
-          <div class="resume" style="margin-top:1rem">
-            <a class="btn secondary" href="Jesse_Schmolze_Resume_.pdf" target="_blank" rel="noopener">Download Résumé (PDF)</a>
-          </div>
+      <div class="hero-card">
+        <h1>Jesse Schmolze</h1>
+        <p class="lead">
+          Junior at UW-Madison studying Economics, Mathematics, and Physics.
+          My research sits at the intersection of machine learning, econometrics,
+          and applied physics, with a focus on economics and finance.
+        </p>
+        <div class="row">
+          <a class="btn" href="#research">Research</a>
+          <a class="btn secondary" href="Jesse_Schmolze_Resume.pdf" target="_blank" rel="noopener">
+            Résumé (PDF)
+          </a>
+        </div>
+        <div class="icons">
+          <a href="https://github.com/jschmolze" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58l-.02-2.27c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.35-1.77-1.35-1.77-1.1-.76.08-.75.08-.75 1.22.09 1.86 1.25 1.86 1.25 1.08 1.85 2.84 1.32 3.53 1 .11-.79.42-1.32.77-1.62-2.67-.3-5.47-1.34-5.47-5.95 0-1.31.47-2.38 1.25-3.22-.13-.3-.54-1.51.12-3.15 0 0 1.01-.32 3.3 1.23a11.47 11.47 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.64.25 2.85.12 3.15.78.84 1.25 1.91 1.25 3.22 0 4.62-2.8 5.65-5.47 5.95.43.37.81 1.1.81 2.22l-.01 3.29c0 .32.21.7.82.58A12 12 0 0 0 12 .5Z"/></svg>
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/jesse-schmolze" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 0 0 5.001 2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-.9 1.7-1.9 3.6-1.9 3.8 0 4.5 2.5 4.5 5.8V21h-4v-5.1c0-1.2 0-2.8-1.7-2.8-1.7 0-2 1.3-2 2.7V21H9z"/></svg>
+            LinkedIn
+          </a>
+          <a href="mailto:jcschmolze@gmail.com">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"/></svg>
+            Email
+          </a>
         </div>
       </div>
     </section>
-
-    <section id="projects" class="card">
-      <div class="section-title">
-        <h2>Selected Projects</h2>
-        <div class="chips">
-          <span class="chip">Python</span>
-          <span class="chip">ML</span>
-          <span class="chip">Quant</span>
-          <span class="chip">React (optional)</span>
-        </div>
-      </div>
-      <div class="grid" style="margin-top:.5rem">
-        <div class="col-6 item">
-          <h3>Time-Inhomogeneous Markov Chains for JPM</h3>
-          <div class="meta">Python • Deep Learning • Stochastic Processes</div>
+ 
+    <!-- RESEARCH -->
+    <section id="research" class="card">
+      <h2>Research</h2>
+      <div class="research-list">
+ 
+        <!-- Paper 1: Deep Learning / Markov Chain -->
+        <div class="research-item">
+          <div class="status">Publication expected within 1-2 months &nbsp;·&nbsp; Extension planned late 2026</div>
+          <h3>Learning Interpretable Time-Inhomogeneous Markov Chains via Deep Learning</h3>
+          <div class="research-meta">Machine Learning &nbsp;·&nbsp; Stochastic Processes &nbsp;·&nbsp; Quantitative Finance</div>
           <p>
-            Research project modeling JPMorgan Chase daily return dynamics using a
-            time-dependent Markov chain learned via neural networks. Discretizes returns
-            into states and trains an MLP to estimate conditional transition matrices
-            given current state and macro/fundamental signals, enabling probabilistic
-            forecasting, regime analysis, and risk simulation.
+            This paper develops a neural network framework for modeling the dynamics of equity returns
+            as a time-inhomogeneous Markov chain, estimating regime-dependent transition matrices as a
+            function of macroeconomic and fundamental signals. The approach addresses the well-documented
+            failure of the standard Markov property in financial time series, offering a flexible and
+            interpretable alternative to static transition models. A theoretical and empirical extension
+            is planned for late 2026 or early 2027.
           </p>
-          <div class="row">
-            <a class="btn secondary"
-               href="453_Final_Project.pdf"
-               target="_blank"
-               rel="noopener">
-              Code
-            </a>
-            <a class="btn secondary"
-               href="453_Final_Report.pdf"
-               target="_blank"
-               rel="noopener">
-              Report (PDF)
+          <div class="research-links">
+            <a class="btn secondary" href="Learning_Interpretable_Time_Inhomogeneous_Markov_Operators_for_Financial_Time_Series.pdf" target="_blank" rel="noopener">
+              Working Paper (PDF)
             </a>
           </div>
         </div>
-        <div class="col-6 item">
-          <h3>Global GDP Growth Classification</h3>
-          <div class="meta">Python • Machine Learning • Macroeconomics</div>
+ 
+        <!-- Paper 2: ECON 580 -->
+        <div class="research-item">
+          <div class="status">Working paper in 1 month &nbsp;·&nbsp; Publication to follow</div>
+          <h3>Institutions, Networks, and Growth: Estimating Heterogeneous Spillover Transmission via Double Machine Learning</h3>
+          <div class="research-meta">Econometrics &nbsp;·&nbsp; International Macroeconomics &nbsp;·&nbsp; Causal Inference</div>
           <p>
-            Built a multi-class machine learning model to classify countries into low,
-            medium, or high GDP-per-capita growth regimes using macroeconomic,
-            demographic, and institutional indicators. Trained and tuned a random forest
-            classifier on World Bank, Penn World Table, and WGI data to study feature
-            importance and structural drivers of economic growth.
+            This paper uses Double Machine Learning on a panel of 120 countries from 1996 to 2023 to
+            estimate how a receiving country's political stability moderates its absorption of exogenous
+            growth shocks transmitted through bilateral trade networks. Instrumenting via Leave-i-Out
+            and commodity terms-of-trade shocks provides causal evidence that the absorption rate is
+            near zero for politically unstable countries and approaches one-to-one for the most stable,
+            with the baseline DML estimates shown to be a conservative lower bound.
           </p>
-          <div class="row">
-            <a class="btn secondary"
-               href="ML_GDP_Project.pdf"
-               target="_blank"
-               rel="noopener">
-              Report (PDF)
+          <div class="research-links">
+            <a class="btn secondary" href="econ580_research_writeup.pdf" target="_blank" rel="noopener">
+              Research Overview
             </a>
           </div>
         </div>
-        <div class="col-6 item">
-          <h3>Solar Racing — Strategy & Telemetry</h3>
-          <div class="meta">Python • Optimization • Data pipelines</div>
-          <p>Developed race‑day strategy tools and telemetry pipelines for solar‑car competitions. Simulations under varying conditions to guide design & operations.</p>
-          <div class="row">
-            <a class="btn secondary" href="race_strategy.html" target="_blank" rel="noopener">Tech write‑up</a>
-          </div>
-          <div class="row">
-            <a class="btn secondary" href="Future_Goals_Race_Strat.pdf" target="_blank" rel="noopener">Future Goals</a>
+ 
+        <!-- Paper 3: Badger Solar Racing -->
+        <div class="research-item">
+          <div class="status">Working paper by end of summer &nbsp;·&nbsp; Publication expected winter / spring 2027</div>
+          <h3>Autonomous Race Strategy via Reinforcement Learning: Badger Solar Racing</h3>
+          <div class="research-meta">Reinforcement Learning &nbsp;·&nbsp; Applied Physics &nbsp;·&nbsp; Optimization</div>
+          <p>
+            This project develops a real-time race strategy system for a competitive solar car in the
+            American Solar Challenge, a ten-day, 1,000-mile cross-country race. A Proximal Policy
+            Optimization agent is trained on a neural network surrogate of a high-fidelity
+            MATLAB/Simulink vehicle simulation, learning to issue speed commands every five minutes
+            that maximize distance while keeping the battery alive across a full race day.
+          </p>
+          <div class="research-links">
+            <a class="btn secondary" href="badger_solar_research_writeup.pdf" target="_blank" rel="noopener">
+              Research Overview
+            </a>
           </div>
         </div>
+ 
       </div>
     </section>
-
-    <section id="coursework" class="card">
-      <h2>Coursework</h2>
-      <p class="meta">Selected, relevant to quant/ML/physics/econ</p>
-      <div class="badges">
-        <span class="badge">Intermediate Microeconomics</span>
-        <span class="badge">Intermediate Macroeconomics</span>
-        <span class="badge">Econometrics</span>
-        <span class="badge">Probability Theory</span>
-        <span class="badge">Stochastic Processes</span>
-        <span class="badge">Machine Learning (STAT 451)</span>
-        <span class="badge">Deep Learning (STAT 453)</span>
-        <span class="badge">Linear Algebra</span>
-        <span class="badge">Multivariable Calculus</span>
-        <span class="badge">International Macroeconomics</span>
-        <span class="badge">Money & Banking</span>
-        <span class="badge">Atomic & Quantum Physics</span>
-      </div>
-    </section>
-
-<section id="experience" class="card">
-  <h2>Experience</h2>
-  <div class="list">
-    <div class="item">
-      <h3>Federal Reserve Challenge Club — Head of Comms & Senior Markets Researcher</h3>
-      <div class="meta">UW–Madison • Apr 2025 – Present</div>
-      <ul class="meta" style="margin:.35rem 0 0 1rem">
-        <li>Led a 10-person team analyzing 20+ indicators (credit spreads, delinquencies, DXY, FCI) to assess market stability.</li>
-        <li>Combined macro conditions with financial indicators to craft fiscal/monetary policy recommendations for presentation to the Fed.</li>
-        <li>Opened comms across 7 sub-teams; accelerated our timeline by 11 days vs. plan.</li>
-      </ul>
-    </div>
-
-    <div class="item">
-      <h3>Badger Solar Racing — Strategy Lead</h3>
-      <div class="meta">Telemetry, simulation, and race-day optimization</div>
-      <p>Developed Simulink/MATLAB models (including PDE-based performance modeling) to optimize race strategy; ~10.7% performance improvement.</p>
-    </div>
-
-    <div class="item">
-      <h3>Undergraduate Business Law Association — Founder & President</h3>
-      <div class="meta">Mar 2025 – Present</div>
-      <p>Founded UW-Madison’s first undergrad business-law club (14 members). Designed a 13-week curriculum (banking, M&A, derivatives, antitrust) and merged with UCLA’s analog for a nationwide network and shared pro-events.</p>
-    </div>
-
-    <div class="item">
-      <h3>Everlight Solar — Business Value Creation Intern</h3>
-      <div class="meta">Summer 2025</div>
-      <ul class="meta" style="margin:.35rem 0 0 1rem">
-        <li>Converted cold leads into warm appointments; generated $80k+ revenue in six weeks.</li>
-        <li>Engaged 500+ households and created objection-handling frameworks yielding 50+ consultations.</li>
-      </ul>
-    </div>
-
-    <div class="item">
-      <h3>Independent Research — Quantum Physics & Equity Inefficiencies</h3>
-      <div class="meta">May 2025 – Present</div>
-      <p>Python stochastic modeling inspired by quantum tunneling to identify equities with asymmetric risk; running backtests across hundreds of tickers.</p>
-    </div>
-  </div>
-</section>
-
-    <section id="clubs" class="card">
-      <h2>Clubs & Leadership</h2>
-      <ul class="list">
-        <li class="item"><strong>UBLA (Founder & President):</strong> 13‑week curriculum, partnerships, pro‑events with practicing lawyers.</li>
-        <li class="item"><strong>Putnam Club:</strong> Weekly problem‑solving; aiming for top‑100 performance.</li>
-        <li class="item"><strong>Federal Reserve Challenge:</strong> Senior markets researcher; policy memos and presentations.</li>
-      </ul>
-    </section>
-<section id="skills" class="card">
-  <h2>Skills & Interests</h2>
-  <div class="badges">
-    <span class="badge">Python (NumPy, Pandas, PyTorch)</span>
-    <span class="badge">Java</span>
-    <span class="badge">Simulink</span>
-    <span class="badge">MATLAB</span>
-    <span class="badge">Stata</span>
-    <span class="badge">Microsoft Office</span>
-  </div>
-</section>
-    
+ 
+    <!-- CONTACT -->
     <section id="contact" class="card">
       <h2>Contact</h2>
-      <p>Open to roles in financial research, data/ML, strategy/ops, economic research and economic consulting. The fastest way to reach me is email.</p>
-      <div class="icons">
-        <a href="mailto:jcschmolze@gmail.com">Email</a>
-        <a href="https://github.com/jschmolze" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://www.linkedin.com/in/jesse-schmolze" target="_blank" rel="noopener">LinkedIn</a>
+      <p style="color: var(--muted); margin: 0 0 1rem;">
+        Open to research collaborations, quantitative finance roles, and data and ML positions.
+        Email is the fastest way to reach me.
+      </p>
+      <div class="row">
+        <a class="btn" href="mailto:jcschmolze@gmail.com">jcschmolze@gmail.com</a>
+        <a class="btn secondary" href="Jesse_Schmolze_Resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a>
       </div>
     </section>
+ 
   </main>
-
+ 
   <footer class="footer">
-    <div class="container">© <span id="y"></span> Jesse Schmolze • Built with vanilla HTML/CSS • Hosted on GitHub Pages</div>
+    <div class="container">© <span id="y"></span> Jesse Schmolze &nbsp;·&nbsp; Built with vanilla HTML/CSS &nbsp;·&nbsp; Hosted on GitHub Pages</div>
   </footer>
-
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+ 
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
