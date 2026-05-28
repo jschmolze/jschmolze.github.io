@@ -198,45 +198,64 @@
       <h2>Research</h2>
       <div class="research-list">
  
-        <!-- Paper 1: Deep Learning / Markov Chain -->
-        <div class="research-item">
-          <div class="status">Publication expected within 1-2 months &nbsp;·&nbsp; Extension planned late 2026 &nbsp;·&nbsp; Accepted: UW-Madison Undergraduate Research Symposium (Apr 2026) &nbsp;·&nbsp; ASA Midwest Regional Conference on Data Science and Statistics (May 2026)</div>
-          <h3>Learning Interpretable Time-Inhomogeneous Markov Chains via Deep Learning</h3>
-          <div class="research-meta">Machine Learning &nbsp;·&nbsp; Stochastic Processes &nbsp;·&nbsp; Quantitative Finance</div>
-          <p>
-            This paper develops a neural network framework for modeling the dynamics of equity returns
-            as a time-inhomogeneous Markov chain, estimating regime-dependent transition matrices as a
-            function of macroeconomic and fundamental signals. The approach addresses the well-documented
-            failure of the standard Markov property in financial time series, offering a flexible and
-            interpretable alternative to static transition models. A theoretical and empirical extension
-            is planned for late 2026 or early 2027.
-          </p>
-          <div class="research-links">
-            <a class="btn secondary" href="Learning_Interpretable_Time_Inhomogeneous_Markov_Operators_for_Financial_Time_Series.pdf" target="_blank" rel="noopener">
-              Working Paper (PDF)
-            </a>
-          </div>
-        </div>
- 
-        <!-- Paper 2: ECON 580 -->
-        <div class="research-item">
-          <div class="status">Working paper in 1 month &nbsp;·&nbsp; Publication to follow</div>
-          <h3>Institutions, Networks, and Growth: Estimating Heterogeneous Spillover Transmission via Double Machine Learning</h3>
-          <div class="research-meta">Econometrics &nbsp;·&nbsp; International Macroeconomics &nbsp;·&nbsp; Causal Inference</div>
-          <p>
-            This paper uses Double Machine Learning on a panel of 120 countries from 1996 to 2023 to
-            estimate how a receiving country's political stability moderates its absorption of exogenous
-            growth shocks transmitted through bilateral trade networks. Instrumenting via Leave-i-Out
-            and commodity terms-of-trade shocks provides causal evidence that the absorption rate is
-            near zero for politically unstable countries and approaches one-to-one for the most stable,
-            with the baseline DML estimates shown to be a conservative lower bound.
-          </p>
-          <div class="research-links">
-            <a class="btn secondary" href="econ580_research_writeup.pdf" target="_blank" rel="noopener">
-              Research Overview (PDF)
-            </a>
-          </div>
-        </div>
+        <!-- Paper 1: Learning Time-Inhomogeneous Markov Dynamics -->
+<div class="research-item">
+  <div class="status">Working paper &nbsp;·&nbsp; Presented at UW-Madison Undergraduate Research Symposium (April 2026) &nbsp;·&nbsp; ASA Midwest Regional Conference on Data Science and Statistics (May 2026)</div>
+  <h3>Learning Interpretable Time-Inhomogeneous Markov Chains via Deep Learning</h3>
+  <div class="research-meta">Machine Learning &nbsp;·&nbsp; Stochastic Processes &nbsp;·&nbsp; Quantitative Finance</div>
+  <p>
+    This paper develops a neural network framework for modeling the dynamics of equity returns
+    as a time-inhomogeneous Markov chain, estimating regime-dependent transition matrices as a
+    function of macroeconomic and fundamental signals. The approach addresses the well-documented
+    failure of the standard Markov property in financial time series, offering a flexible and
+    interpretable alternative to static transition models.
+  </p>
+  <div class="research-links">
+    <a class="btn secondary" href="Learning_Interpretable_Time_Inhomogeneous_Markov_Operators_for_Financial_Time_Series.pdf" target="_blank" rel="noopener">
+      Working Paper (PDF)
+    </a>
+  </div>
+</div>
+
+<!-- Paper 2: Inspectable Neural Markov Models (Multi-Asset Extension) -->
+<div class="research-item">
+  <div class="status">Working paper &nbsp;·&nbsp; Multi-asset extension of the paper above</div>
+  <h3>Inspectable Neural Markov Models for Non-Stationary Time Series</h3>
+  <div class="research-meta">Machine Learning &nbsp;·&nbsp; Stochastic Processes &nbsp;·&nbsp; Quantitative Finance</div>
+  <p>
+    This paper extends the neural Markov framework to a 10-asset US bank panel covering 24 years
+    and 6,183 trading days per asset, testing how the choice of conditioning variable affects the
+    structural consistency of the learned transition matrices. Conditioning on realized volatility
+    rather than returns yields a 5.6% improvement in internal model consistency and superior
+    out-of-sample fit in 9 of 10 assets, with a universal cross-asset pattern showing that
+    high-volatility regimes compress next-step distributions regardless of the current state.
+  </p>
+  <div class="research-links">
+    <a class="btn secondary" href="Inspectable_Neural_Markov_Models_for_Non_Stationary_Time_Series.pdf" target="_blank" rel="noopener">
+      Working Paper (PDF)
+    </a>
+  </div>
+</div>
+
+<!-- Paper 3: ECON 580 -->
+<div class="research-item">
+  <div class="status">Final draft complete &nbsp;·&nbsp; Publication to follow</div>
+  <h3>Who Captures Trade-Network Growth? Institutional Capacity and the Absorption of Foreign Shocks</h3>
+  <div class="research-meta">Econometrics &nbsp;·&nbsp; International Macroeconomics &nbsp;·&nbsp; Causal Inference</div>
+  <p>
+    This paper uses Double Machine Learning on a panel of 111 countries from 1996 to 2023 to
+    estimate how a receiving country's political stability moderates its absorption of exogenous
+    growth shocks transmitted through bilateral trade networks. Instrumenting via Leave-i-Out
+    and commodity terms-of-trade shocks provides causal evidence that the absorption rate is
+    near zero for politically unstable countries and approaches one-to-one for the most stable,
+    with the baseline DML estimates shown to be a conservative lower bound.
+  </p>
+  <div class="research-links">
+    <a class="btn secondary" href="Jesse_Schmolze_ECON580_Final_Draft.pdf" target="_blank" rel="noopener">
+      Working Paper (PDF)
+    </a>
+  </div>
+</div>
  
         <!-- Paper 3: Badger Solar Racing -->
         <div class="research-item">
