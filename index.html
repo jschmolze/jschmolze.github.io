@@ -54,7 +54,13 @@
     :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
     /* ---- masthead ---- */
-    .masthead { padding: 5rem 0 3rem; }
+    .masthead { padding: 4rem 0 3rem; }
+    .dateline {
+      font-family: var(--sans);
+      font-size: .75rem; font-weight: 600; text-transform: uppercase; letter-spacing: .1em;
+      color: var(--accent);
+      margin: 0 0 .9rem;
+    }
     h1 {
       font-size: 2.25rem; font-weight: 600; letter-spacing: -.015em;
       line-height: 1.15; margin: 0;
@@ -117,6 +123,7 @@
   <main class="wrap">
 
     <header class="masthead">
+      <p class="dateline">Updated <time datetime="2026-09">September 2026</time></p>
       <h1>Jesse Schmolze</h1>
       <p class="standfirst">B.S. Economics, Mathematics &amp; Physics &nbsp;·&nbsp; University of Wisconsin–Madison &nbsp;·&nbsp; Graduating 2027</p>
 
